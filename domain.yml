@@ -1,17 +1,35 @@
 version: "3.1"
 
+slots:
+  payment_type: 
+    type: categorical
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: payment_type
+      not_intent: goodbye
+    values:
+    - card
+    - cash
+entities:
+ - payment_type
 intents:
   - greet
   - goodbye
   - affirm
   - deny
-  - mood_great
-  - mood_unhappy
+  - declare_payment_type 
   - bot_challenge
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: "Hey! First of all, do you pay in cash or with a card?"
+
+  utter_repeat_payment_method:
+  - text: "So you will pay in {payment_type}. Forwarding you to our agent."
+
+  utter_we_dont_accept_cash:
+  - text: "Sorry, but our service doesn't accept cash for the moment..."
 
   utter_cheer_up:
   - text: "Here is something to cheer you up:"
@@ -19,9 +37,6 @@ responses:
 
   utter_did_that_help:
   - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
 
   utter_goodbye:
   - text: "Bye"

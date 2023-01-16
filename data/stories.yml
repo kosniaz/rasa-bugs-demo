@@ -6,38 +6,18 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
-
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
-
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
+  - intent: declare_payment_type
+  - slot_was_set:
+      - payment_type: card
+  - action: utter_repeat_payment_method
   - action: utter_goodbye
 
-
-
-    #stories:
-    #
-    #- story: ebanking_general
-    #  steps:
-    #  - intent: general_bank_product
-    #  - slot_was_set:
-    #    - bank_product: ebanking
-    #  # ASK.InternetBanking.Vague.wav
-    #  - action: utter_internet_banking_vague
-    #
+- story: happy path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: declare_payment_type
+  - slot_was_set:
+      - payment_type: cash
+  - action: utter_we_dont_accept_cash
+  - action: utter_goodbye
