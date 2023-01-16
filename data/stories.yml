@@ -2,19 +2,26 @@ version: "3.1"
 
 stories:
 
-- story: happy path
+- story: happy path card
   steps:
   - intent: greet
   - action: utter_greet
   - intent: declare_payment_type
+  - slot_was_set:
+    - payment_type: card
   - action: utter_repeat_payment_method
   - action: utter_goodbye
 
-- story: happy path without greeting
+- story: happy path cash
   steps:
+  - intent: greet
+  - action: utter_greet
   - intent: declare_payment_type
-  - action: utter_repeat_payment_method
+  - slot_was_set:
+    - payment_type: cash
+  - action: utter_we_dont_accept_cash
   - action: utter_goodbye
+
 
 - story: greetings
   steps:
@@ -25,27 +32,3 @@ stories:
   steps:
   - intent: goodbye
   - action: utter_goodbye
-
-#- story: happy path
-#  steps:
-#  - intent: greet
-#  - action: utter_greet
-#  - intent: declare_payment_type
-#  - slot_was_set:
-#    - payment_type: card
-#  - action: utter_repeat_payment_method
-#  - action: utter_goodbye
-#
-
-#- story: happy path 2
-#  steps:
-
-#- story: happy path 2
-#  steps:
-#  - intent: greet
-#  - action: utter_greet
-#  - intent: declare_payment_type
-#  - slot_was_set:
-#      - payment_type: cash
-#  - action: utter_we_dont_accept_cash
-#  - action: utter_goodbye
