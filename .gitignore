@@ -1,0 +1,7 @@
+models/*
+*.pyc
+.rasa/
+.rasa/*
+models/
+venv/
+venv/*
