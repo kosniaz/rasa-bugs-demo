@@ -17,38 +17,6 @@ nlu:
     - goodevening
     - good afternoon
 
-- intent: goodbye
-  examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
-
-- intent: affirm
-  examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
-
-- intent: deny
-  examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-
 - intent: declare_payment_type
   examples: |
     - in [card]{"entity": "payment_type", "value": "card"}
@@ -59,3 +27,11 @@ nlu:
     - I pay with [cash]{"entity": "payment_type", "value": "cash"}
     - [cash]{"entity": "payment_type", "value": "cash"}
 
+- intent: greet
+  examples: |
+    - bye
+    - goodbye
+    - bye bye
+    - bb
+    - ciao
+    - later
