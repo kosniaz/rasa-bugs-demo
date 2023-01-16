@@ -8,7 +8,9 @@ slots:
     - type: from_entity
       entity: payment_type
       not_intent: goodbye
+    initial_value: empty
     values:
+    - empty
     - card
     - cash
 
@@ -28,7 +30,7 @@ responses:
   - text: "So you will pay in {payment_type}. Forwarding you to our agent."
 
   utter_we_dont_accept_cash:
-  - text: "Sorry, but our service doesn't accept cash for the moment..."
+  - text: "Sorry, but our service doesn't accept cash for the moment."
 
   utter_goodbye:
   - text: "Bye"
