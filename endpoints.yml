@@ -34,12 +34,3 @@
 
 # Event broker which all conversation events should be streamed to.
 # https://rasa.com/docs/rasa/event-brokers
-
-event_broker:
-  type: pika
-  url: chomsky.ilsp.gr
-  port: 9999
-  username: user
-  password: user_pass 
-  queues: 
-    - "rasa_production_events"
