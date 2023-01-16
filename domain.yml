@@ -1,5 +1,19 @@
 version: "3.1"
 
+slots:
+ payment_type:
+     type: categorical
+     values:
+       - cash
+       - card
+     mappings:
+     - type: from_entity
+       entity: payment_type 
+     influence_conversation: true
+
+entities:
+  - payment_type
+
 intents:
   - greet
   - goodbye
