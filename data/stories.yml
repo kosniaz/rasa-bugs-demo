@@ -4,6 +4,8 @@ stories:
 
 - story: happy path card
   steps:
+  - slot_was_set:
+    - payment_type: empty
   - intent: greet
   - action: utter_greet
   - intent: declare_payment_type
@@ -14,6 +16,8 @@ stories:
 
 - story: happy path cash
   steps:
+  - slot_was_set:
+    - payment_type: empty
   - intent: greet
   - action: utter_greet
   - intent: declare_payment_type
@@ -22,13 +26,16 @@ stories:
   - action: utter_we_dont_accept_cash
   - action: utter_goodbye
 
-
 - story: greetings
   steps:
+  - slot_was_set:
+    - payment_type: empty
   - intent: greet
   - action: utter_greet
 
 - story: goodbye
   steps:
+  - slot_was_set:
+    - payment_type: empty
   - intent: goodbye
   - action: utter_goodbye

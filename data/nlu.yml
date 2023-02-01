@@ -26,6 +26,11 @@ nlu:
     - with [cash]{"entity": "payment_type", "value": "cash"}
     - I pay with [cash]{"entity": "payment_type", "value": "cash"}
     - [cash]{"entity": "payment_type", "value": "cash"}
+    - any payment kind
+    - I can pay in any way
+    - all payment methods
+    - payment anyway
+    - payment
 
 - intent: greet
   examples: |

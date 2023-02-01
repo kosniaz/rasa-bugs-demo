@@ -14,6 +14,12 @@ slots:
     - card
     - cash
 
+actions:
+- utter_goodbye
+- utter_greet
+- utter_we_dont_accept_cash
+- utter_repeat_payment_method
+
 entities:
  - payment_type
 
